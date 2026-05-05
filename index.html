@@ -3,198 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SZD 笙智達 | 5N5 純淨氫氧領導品牌</title>
+    <title>SZD 笙智達 | GY & HY 氫氧系列旗艦店</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
-        /* 笙智達 LOGO 品牌色自定義 */
-        :root {
-            --szd-green: #22c55e; /* 活力綠 */
-            --szd-blue: #0ea5e9;  /* 科技藍 */
-        }
-        body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background-color: #ffffff; }
-        
-        /* 綠藍白漸層背景 */
-        .szd-gradient { 
-            background: linear-gradient(135deg, #dcfce7 0%, #e0f2fe 50%, #ffffff 100%); 
-        }
-        .hero-szd {
-            background: linear-gradient(135deg, #166534 0%, #0369a1 100%);
-        }
-        .text-szd-gradient {
-            background: linear-gradient(to right, #15803d, #0369a1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
-        .step-card { border-left: 6px solid #22c55e; transition: all 0.3s; }
-        .step-card:hover { transform: translateX(10px); background: #f0fdf4; }
+        body { font-family: 'PingFang TC', sans-serif; background-color: #f0f4f8; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .hero-gradient { background: radial-gradient(circle at top right, #0ea5e9, #1e3a8a); }
+        .tech-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
     </style>
 </head>
-<body class="text-slate-800">
+<body class="text-slate-900">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass shadow-sm">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <!-- 模擬 LOGO 圓形漸層 -->
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-blue-600"></div>
-                <div class="text-2xl font-black tracking-tighter text-szd-gradient">笙智達 SZD</div>
-            </div>
-            <div class="hidden md:flex space-x-8 font-bold text-slate-600">
-                <a href="#series" class="hover:text-green-600">產品系列</a>
-                <a href="#usage" class="hover:text-blue-600">佩戴教學</a>
-                <a href="#tech" class="hover:text-green-600">核心技術</a>
-                <a href="#contact" class="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-full shadow-md">立即聯繫</a>
+            <div class="text-2xl font-black text-blue-900">SZD 笙智達</div>
+            <div class="hidden md:flex space-x-8 font-bold">
+                <a href="#series" class="hover:text-blue-600">產品系列</a>
+                <a href="#safety" class="hover:text-blue-600">智慧守護</a>
+                <a href="#application" class="hover:text-blue-600">應用模式</a>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full shadow-lg">立即諮詢</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-32 pb-24 hero-szd text-white">
+    <header class="pt-32 pb-24 hero-gradient text-white">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="animate__animated animate__fadeInLeft">
-                <span class="inline-block px-4 py-1 bg-green-400/30 text-green-100 rounded-full text-sm font-bold mb-6">2021 台灣金玉獎獲獎單位</span>
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">呼吸之間 · 煥活健康<br><span class="text-blue-200">5N5 極致純淨氫</span></h1>
-                <p class="mt-8 text-lg opacity-90 leading-relaxed">
-                    導入日本頂尖質子膜技術，純度高達 99.9995%。<br>
-                    科學數據追蹤，讓您的每一口呼吸都精準對抗氧化壓力。
-                </p>
+            <div class="animate__animated animate__fadeIn">
+                <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-bold mb-4">呼吸之間 · 煥活健康</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">GY 系列氫氧發生器<br><span class="text-blue-200">99.99% 高純度對比</span></h1>
+                <p class="mt-8 text-lg opacity-90">專為診所與高需求家庭設計，滿足從個人保養到專業場域的全方位氫分子修復需求。</p>
                 <div class="mt-10 flex gap-4">
-                    <button class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold shadow-xl hover:bg-green-50">探索 GY/HY 系列</button>
-                    <button class="border border-white/40 px-8 py-3 rounded-lg font-bold hover:bg-white/10">查看 MDA 實證數據</button>
+                    <a href="#series" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold shadow-xl">查看規格</a>
+                    <a href="#safety" class="border border-white/50 px-8 py-3 rounded-lg font-bold">安全機制</a>
                 </div>
             </div>
-            <div class="relative animate__animated animate__zoomIn flex justify-center">
-                <div class="bg-white/10 p-4 rounded-[2.5rem] backdrop-blur-md">
-                    <img src="https://via.placeholder.com/500x400/ffffff/0369a1?text=SZD+Hydrogen+Tech" alt="SZD Device" class="rounded-[2rem] shadow-2xl">
-                </div>
+            <div class="relative animate__animated animate__zoomIn">
+                <img src="https://via.placeholder.com/600x450/1e3a8a/FFFFFF?text=GY-HX1800+Flagship" alt="GY-HX1800" class="rounded-3xl shadow-2xl border-4 border-white/20">
             </div>
         </div>
     </header>
 
-    <!-- Nasal Cannula Usage Section (新加入) -->
-    <section id="usage" class="py-24 szd-gradient">
-        <div class="max-w-5xl mx-auto px-6">
+    <!-- Series Comparison -->
+    <section id="series" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-extrabold text-szd-gradient">鼻吸管正確佩戴指南</h2>
-                <p class="text-slate-600 mt-4 font-medium">簡單三步驟，確保氫氣精準輸送與最高舒適度</p>
+                <h2 class="text-4xl font-bold text-blue-900">雙旗艦系列：滿足您的流量渴望</h2>
+                <p class="text-slate-500 mt-4">從居家 500cc 到專業 1800cc，科技始終來自於純淨</p>
             </div>
-            
-            <div class="space-y-6">
-                <!-- Step 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm step-card">
-                    <div class="flex items-start gap-6">
-                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-black text-xl shrink-0">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-slate-800">鼻部定位：精準輸出</h3>
-                            <p class="text-slate-600">將兩個鼻吸頭輕輕插入鼻孔內。**確保導管彎曲面朝下與朝內**，順應鼻腔自然弧度。此細節能最大化氧氣輸送效率，並避免鼻黏膜受壓迫。</p>
-                        </div>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- HY-90 -->
+                <div class="glass p-8 rounded-3xl border-2 border-slate-100 tech-card">
+                    <div class="text-blue-600 font-bold mb-2">居家旗艦款</div>
+                    <h3 class="text-2xl font-bold mb-4">HY-90</h3>
+                    <ul class="space-y-4 text-slate-600 mb-8">
+                        <li>🌀 流量：250 / 500 cc/min</li>
+                        <li>💎 純度：99.9995% (5N5)</li>
+                        <li>🏆 2021 台灣金玉獎</li>
+                    </ul>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm step-card" style="border-left-color: #0ea5e9;">
-                    <div class="flex items-start gap-6">
-                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-black text-xl shrink-0">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-slate-800">耳後固定：穩固無壓</h3>
-                            <p class="text-slate-600">將兩側導管分別向上拉起，**平順地繞過雙耳上方**。導管應自然垂放於耳後凹槽，請勿過度向下拉扯，避免耳廓皮膚紅腫。</p>
-                        </div>
-                    </div>
+                <!-- GY-HX900 -->
+                <div class="bg-blue-900 text-white p-8 rounded-3xl shadow-2xl tech-card scale-105">
+                    <div class="text-blue-300 font-bold mb-2">高效升級款</div>
+                    <h3 class="text-2xl font-bold mb-4">GY-HX900</h3>
+                    <ul class="space-y-4 opacity-90 mb-8">
+                        <li>🌀 流量：600 ml/min</li>
+                        <li>🛡️ 2.5L 超大容量水箱</li>
+                        <li>📊 4.3 吋智慧彩色螢幕</li>
+                    </ul>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm step-card" style="border-left-color: #15803d;">
-                    <div class="flex items-start gap-6">
-                        <div class="w-12 h-12 bg-green-200 text-green-800 rounded-full flex items-center justify-center font-black text-xl shrink-0">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2 text-slate-800">下巴調節：鎖定管線</h3>
-                            <p class="text-slate-600">輕輕向上推動調節環至下巴下方。建議在調節環與下巴之間**保留約「兩指寬」的空間**，確保頭部能左右自由轉動且無勒緊感。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Checkpoint -->
-            <div class="mt-12 p-8 bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl border border-white flex flex-col md:flex-row items-center justify-around gap-6">
-                <div class="font-bold text-slate-700">✅ 佩戴完成快速檢查：</div>
-                <div class="flex gap-8">
-                    <div class="text-center text-sm font-bold text-slate-500">鼻部<br><span class="text-green-600">穩固服貼</span></div>
-                    <div class="text-center text-sm font-bold text-slate-500">耳部<br><span class="text-green-600">無拉扯感</span></div>
-                    <div class="text-center text-sm font-bold text-slate-500">下巴<br><span class="text-green-600">留兩指寬</span></div>
+                <!-- GY-HX1800 -->
+                <div class="glass p-8 rounded-3xl border-2 border-slate-100 tech-card">
+                    <div class="text-blue-600 font-bold mb-2">專業診所款</div>
+                    <h3 class="text-2xl font-bold mb-4">GY-HX1800</h3>
+                    <ul class="space-y-4 text-slate-600 mb-8">
+                        <li>🌀 流量：最高 1800 ml/min</li>
+                        <li>👥 支援雙人同時吸入</li>
+                        <li>🏥 適合健康管理中心</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech & MDA Section -->
-    <section id="tech" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold text-szd-gradient mb-8">科學數據是我們的核心</h2>
-                <p class="text-slate-600 mb-6">笙智達不只賣機器，更提供**量化健康追蹤**。透過 MDA (丙二醛) 自由基檢測，讓您親眼見證健康改善。</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
-                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <span class="font-bold">日本 AGC 頂規質子交換膜：絕不產生臭氧</span>
+    <!-- Intelligent Safety Section -->
+    <section id="safety" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1">
+                    <h2 class="text-4xl font-bold text-blue-900 mb-8">E1-E6 智慧防護系統</h2>
+                    <p class="text-slate-600 mb-8 font-medium">我們將說明書中的精密邏輯，轉化為直覺的面板警示，確保每一秒呼吸都安全無虞。</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-blue-500">
+                            <span class="font-bold text-blue-600">E1 水位低</span> 預防乾燒
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-red-500">
+                            <span class="font-bold text-red-600">E2 過熱</span> >65℃ 自動停機
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-yellow-500">
+                            <span class="font-bold text-yellow-600">E3 水質</span> TDS > 5 自動提醒
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-purple-500">
+                            <span class="font-bold text-purple-600">E6 過壓</span> 氣路堵塞監測
+                        </div>
                     </div>
-                    <div class="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
-                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                        <span class="font-bold">電解槽壽命達 6,000 小時以上</span>
+                </div>
+                <div class="flex-1 bg-slate-900 p-10 rounded-[3rem] shadow-3xl text-center border-8 border-slate-800">
+                    <div class="text-blue-400 text-5xl mb-4 font-mono">028°C</div>
+                    <div class="w-full bg-blue-500/20 h-32 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-blue-300 text-6xl">600</span>
+                    </div>
+                    <div class="flex justify-around text-blue-100 text-sm">
+                        <span>TDS 水質檢測</span>
+                        <span>智慧安全鎖</span>
                     </div>
                 </div>
             </div>
-            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                <h4 class="text-center font-bold mb-6">真實案例：MDA 指標顯著下降 76.8%</h4>
-                <canvas id="szdChart" width="400" height="250"></canvas>
+        </div>
+    </section>
+
+    <!-- Application Modes -->
+    <section id="application" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-16">全方位健康應用</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div>
+                    <div class="text-5xl mb-6">👃</div>
+                    <h4 class="text-xl font-bold mb-4">鼻吸模式 (標配)</h4>
+                    <p class="text-slate-500">每日 40-60 分鐘，科學數據證實有效降低 MDA 氧化壓力 [3, 4]。</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-6">👁️</div>
+                    <h4 class="text-xl font-bold mb-4">眼部模式 (選配)</h4>
+                    <p class="text-slate-500">針對長時間使用 3C 的族群，提供氫氣霧化保養 [5]。</p>
+                </div>
+                <div>
+                    <div class="text-5xl mb-6">🎭</div>
+                    <h4 class="text-xl font-bold mb-4">深度鼻罩 (選配)</h4>
+                    <p class="text-slate-500">支援更大流量吸入，讓氫分子更快穿透血腦屏障 [5, 6]。</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+    <footer id="contact" class="bg-blue-950 text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
             <div>
-                <div class="text-3xl font-black mb-6">笙智達 SZD Consulting</div>
-                <p class="opacity-70">地址：新竹市自由路 95 巷 18 弄 26 號</p>
-                <p class="opacity-70">電話：03-5330188</p>
-                <p class="mt-8 text-sm text-green-400 font-bold tracking-widest uppercase">上醫治未病 · 5N5 極致純度</p>
+                <h3 class="text-3xl font-bold mb-6">SZD 笙智達有限公司</h3>
+                <p class="opacity-70 mb-4">地址：新竹市自由路 95 巷 18 弄 26 號</p>
+                <p class="opacity-70 mb-8">電話：03-5330188</p>
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <p class="font-bold text-blue-300">⚠️ 安全警語</p>
+                    <p class="text-sm mt-2">請使用 TDS < 5 之純淨水。機台運作期間禁止明火與吸菸，保持通風良好 [7, 8]。</p>
+                </div>
             </div>
             <div class="text-right">
-                <p class="font-bold text-lg mb-4">追求極致純度，守護家人健康</p>
-                <div class="flex gap-2 justify-end">
-                    <div class="w-10 h-10 bg-green-600 rounded-lg"></div>
-                    <div class="w-10 h-10 bg-blue-600 rounded-lg"></div>
-                </div>
+                <p class="text-4xl font-bold text-blue-400">上醫治未病</p>
+                <p class="mt-4 opacity-60">讓科學數據說話，讓健康成為常態。</p>
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('szdChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['1月 (高風險)', '3月 (改善中)', '8月 (優良)'],
-                datasets: [{
-                    label: 'MDA 自由基數值',
-                    data: ,
-                    borderColor: '#22c55e',
-                    backgroundColor: 'rgba(34, 197, 94, 0.2)',
-                    fill: true,
-                    tension: 0.4,
-                    borderWidth: 4,
-                    pointRadius: 6,
-                    pointBackgroundColor: '#0ea5e9'
-                }]
-            },
-            options: {
-                plugins: { legend: { display: false } },
-                scales: { y: { beginAtZero: true } }
-            }
-        });
-    </script>
 </body>
 </html>
